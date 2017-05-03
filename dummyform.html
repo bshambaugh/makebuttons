@@ -1,0 +1,28 @@
+<!-- This loads a file and displays it to the screen -->
+<!doctype html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+<form action="#" method="get">
+<p><input name="textfield" type="text" id="textfield"><input name="button" type="button" id="button" value="Add File"></p>
+</form>
+<p id="numbertwo"></p>
+<script>
+let thestring = "this is an example of something printed";
+// I need to replace thestring with an xmlHTTPRequest
+document.getElementById("button").addEventListener("click", myFunction);
+
+function myFunction() {
+   let textfieldvalue = document.getElementById("textfield").value;
+   
+    $.get( textfieldvalue, function( data ) {
+        document.getElementById("numbertwo").innerHTML = data;
+     });
+   document.getElementById("textfield").value = ''; 
+}
+</script>
+<body>
+</html>
