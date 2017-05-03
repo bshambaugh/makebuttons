@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+</head>
+<body>
+<!--
+For the demo click I used the w3cshools addeventlistener method...
+https://www.w3schools.com/jsref/event_onclick.asp
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick_addeventlistener
+-->
+<p>"This example uses the addEventListner() method to attach a "click" event to a p element." -- w3cschools</p>
+<p id="demo">Click Me.</p>
+<p id="demotwo"></p>
+<script>
+let thestring = "this is an example of something printed";
+// I need to replace thestring with an xmlHTTPRequest
+document.getElementById("demo").addEventListener("click", myFunction);
+
+function myFunction() {
+
+// I used jQuery  get request here: https://api.jquery.com/jQuery.get/
+ var url = 'http://localhost/node-arc-d3/data/Food-Growing-Methods.ttl';
+
+$.get( url, function( data ) {
+ // alert(data);
+
+
+ document.getElementById("demotwo").innerHTML = data;
+});
+
+}
+</script>
+</body>
+</html>
+
